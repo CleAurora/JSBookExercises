@@ -1,0 +1,25 @@
+<meta charset "UFT-8">
+<script type="text/javascript">
+    function pulaLinha(){
+        document.write("<br>");
+    }
+    
+    function mostra(frase){
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function calculaIMC(altura, peso) {
+        var imc = peso/(altura*altura);
+        return imc;
+    }
+
+    var peso = 56.80;
+    var altura = 1.60;
+    var imc = calculaIMC(altura, peso);
+
+    mostra("Meu imc é: " + imc);
+    mostra("Ainda estou "+ (imc-18.5)+"pontos acima do limite de magreza.");
+    mostra("Meu imc   é: "+(calculaIMC(altura, peso)));
+    mostra("Meu imc está "+ (35-imc)+"pontos abaixo da obesidade.");
+</script>

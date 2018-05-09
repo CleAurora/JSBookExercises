@@ -1,0 +1,25 @@
+<meta charset="UFT-8">
+<script type="text/javascript">
+    var idade = prompt ("Quantos anos você tem?");
+    var dias = idade * 365 + Math.round(idade/4);
+    document.write("Você já viveu "+ dias + " dias de vida!!");
+
+    var batimentos= dias * 24 * 60 * 80;
+    document.write("<br>Seu coração já bateu "+ batimentos + " vezes! Haja coração!!!" );
+
+    function calculaDiasDeVida(idade){
+        var dias = idade * 365 + Math.round(idade/4);
+        return dias;
+    }
+
+    function calculaBatimentos (dias){
+        var batimentos = dias * 24 * 60 * 80;
+        return batimentos;
+    }
+
+    var idade = 34;
+    var dias = calculaDiasDeVida(idade);
+    var batimentos= calculaBatimentos(dias);
+    document.write("<br>Seu coração já bateu "+ batimentos + " vezes!! Haja coração!!");
+    
+</script>
