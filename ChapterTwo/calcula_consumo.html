@@ -1,0 +1,20 @@
+<meta charset="UFT-8">
+<h3>Álcool ou Gasolina<h3>
+
+<script>
+    var volumeDeGasolina = 40;
+    var caminhoComGasolina = 400;
+    var consumoDeGasolina = (caminhoComGasolina/volumeDeGasolina);
+        document.write("O consumo de Gasolina é: "+ Math.round(consumoDeGasolina) + "km/l"+"<br>");
+
+    var volumeDeAlcool = 40;
+    var caminhoComAlcool = 300;
+    var consumoDeAlcool = (caminhoComAlcool /volumeDeAlcool);
+        document.write("O consumo de Álcool é: "+ (consumoDeAlcool).toFixed(3) + "km/l"+"<br>");
+
+    var precoDaGasolina = 2.90;
+    var precoDoAlcool = 2.40;
+    var precoPorKmDaGasolina = (precoDaGasolina/consumoDeGasolina);
+    var precoPorKmDoAlcool = (precoDoAlcool/consumoDeAlcool);
+        document.write("O preço por kilômetro rodado da Gasolina é: R$"+precoPorKmDaGasolina+ " e o do Álcool é: R$"+precoPorKmDoAlcool+"<br>");
+</script>
