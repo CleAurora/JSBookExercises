@@ -18,8 +18,7 @@
     }
 
     var idade = 34;
-    var dias = calculaDiasDeVida(idade);
-    var batimentos= calculaBatimentos(dias);
+    var batimentos= calculaBatimentos(calculaDiasDeVida(idade));
     document.write("<br>Seu coração já bateu "+ batimentos + " vezes!! Haja coração!!");
     
 </script>
