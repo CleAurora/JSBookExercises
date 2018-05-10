@@ -1,4 +1,4 @@
-<meta charset "UFT-8">
+<meta charset="utf-8">
 <script type="text/javascript">
     function pulaLinha(){
         document.write("<br>");
@@ -11,15 +11,15 @@
 
     function calculaIMC(altura, peso) {
         var imc = peso/(altura*altura);
-        return imc;
+        return imc.toFixed(2);
     }
 
-    var peso = 56.80;
-    var altura = 1.60;
+    var peso = 52;
+    var altura = 1.62;
     var imc = calculaIMC(altura, peso);
 
     mostra("Meu imc é: " + imc);
-    mostra("Ainda estou "+ (imc-18.5)+"pontos acima do limite de magreza.");
-    mostra("Meu imc   é: "+(calculaIMC(altura, peso)));
-    mostra("Meu imc está "+ (35-imc)+"pontos abaixo da obesidade.");
+    mostra("Ainda estou "+ (imc-18.5).toFixed(2)+" pontos acima do limite de magreza.");
+    mostra("Meu imc é: "+ (calculaIMC(altura, peso)));
+    mostra("Meu imc está "+ (35-imc).toFixed(2)+" pontos abaixo da obesidade.");
 </script>
