@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<script>
+
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function sorteia(n) {
+        return Math.round(Math.random()*n);
+    }
+
+    var numMax = prompt("Fale um número limite para ser sorteado!");
+    if (isNaN(numMax)) {
+        mostra("Apenas números são válidos!")
+    } else {
+        var numeroPensado = sorteia(numMax);
+        var chute = prompt("Já pensei!! Qual você acha que é?");
+
+        if (isNaN(chute)) {
+            mostra("Apenas números são válidos!")
+        } else {
+
+            if (chute == numeroPensado) {
+                mostra("Uau!!! Você acertou, pois eu pensei no "+ numeroPensado);
+            } 
+            if (chute!= numeroPensado) {
+                mostra("Você errou! Eu tinha pensado no "+ numeroPensado);
+                if (chute>numeroPensado) {
+                    mostra(" Você pensou muito alto!");
+                }
+                if (chute<numeroPensado) {
+                    mostra("Você pensou baixo!");
+                }
+            } else {
+                mostra("Você errou! Eu tinha pensado no "+ numeroPensado);
+            }
+        }
+    }
+</script>
