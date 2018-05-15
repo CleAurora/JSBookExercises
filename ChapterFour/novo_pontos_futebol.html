@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+    function pulaLinha(){
+        document.write("<br>");
+    }
+
+    function mostra(frase){
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function calculaPontos(vitorias, empates, derrotas){
+        return (vitorias*3)+empates-derrotas;
+    }
+    
+    var vitoriasCDC = parseInt(prompt("Quantos jogos o CDC FC venceu?"));
+    var empatesCDC = parseInt(prompt ("Quantos jogos o CDC FC empatou?"));
+    var derrotasCDC = parseInt(prompt ("Quantos jogos o CDC FC perdeu?"));
+    var pontosCDC = calculaPontos(vitoriasCDC,empatesCDC,derrotasCDC);
+    mostra("Nosso time CDC tem "+ pontosCDC + " pontos!");
+
+    var vitoriasLivrosVelhos = parseInt(prompt("Quantos jogos o Livros Velhos FC venceu?"));
+    var empatesLivrosVelhos = parseInt(prompt ("Quantos jogos o Livros Velhos FC empatou?"));
+    var derrotasLivrosVelhos = parseInt(prompt ("Quantos jogos o Livros Velhos FC perdeu?"));
+    var pontosLivroVelhos = calculaPontos(vitoriasLivrosVelhos,empatesLivrosVelhos,derrotasLivrosVelhos);
+    mostra("Livros Velhos SP tem "+ pontosLivroVelhos + " pontos!");
+
+    if(pontosCDC>pontosLivroVelhos){
+       mostra("Nosso time está indo MELHOR que Livros Velhos");
+    }
+
+    if(pontosCDC<pontosLivroVelhos){
+       mostra("Nosso time está indo PIOR que Livros Velhos");
+    }
+
+    if(pontosCDC==pontosLivroVelhos){
+       mostra("Nosso time está EMPATADO com Livros Velhos");
+    }
+</script>
