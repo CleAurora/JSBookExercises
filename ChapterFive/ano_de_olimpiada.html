@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<script>
+    function mostra(frase){
+        document.write(frase+"<br>");
+    }
+
+    var anoOlimpiada = parseInt(prompt("Qual o ano inicial para olimpíadas?"));
+    var anoLimite = parseInt(prompt("Qual o ano limite para as olimpíadas?"));
+
+    while(anoOlimpiada<=anoLimite){
+        mostra(anoOlimpiada + " tem olimpíada!!!");
+        anoOlimpiada = anoOlimpiada + 4;
+    }
+    // ano inicial das olimpíadas = 1896
+</script>

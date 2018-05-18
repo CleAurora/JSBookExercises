@@ -1,0 +1,33 @@
+<meta charset:"utf-8">
+<script>
+
+    function mostra(frase){
+        document.write(frase+"<br>");
+    }
+    
+    var anoLimite = parseInt(prompt("Qual é o ano limite?"));
+    var anoDeCopa = parseInt(prompt("Informe o ano inicial!"));
+
+    //while(true){
+    while(anoDeCopa<=anoLimite){
+        mostra (anoDeCopa + " tem copa!!!");
+        anoDeCopa = anoDeCopa + 4;
+        mostra(anoDeCopa+ "! Esse é o valor após a soma!");
+    }
+    
+    if(anoLimite>=1930 && anoDeCopa>=1930){
+        mostra("Ufa! Esses foram os anos de copa de " + anoDeCopa + " até " + anoLimite+"!");
+    } 
+    if (anoLimite>=1930 && anoDeCopa<=1930){
+        mostra("A copa só começou em 1930, digite um ano após o seu início!");
+    }
+    if(anoDeCopa<=1930 && anoLimite<=1930){
+        mostra("A copa só começou em 1930, digite um ano após o seu início!");
+    }    
+    //else{
+    //        mostra("A copa só começou em 1930, digite um ano após o seu início!");
+    //    }
+
+    
+
+</script>
