@@ -3,7 +3,12 @@
     function mostra(frase){
         document.write(frase+"<br>");
     }
-    for (var multiplicador = 1; multiplicador<=10; multiplicador++){
-        mostra(multiplicador*7);
+
+    var numero = parseInt(prompt("Qual o número deseja tabuar?"));
+    var limiteTabuada = parseInt(prompt("De 1 até que número?"));
+
+    for (var multiplicador = 1; multiplicador<=limiteTabuada; multiplicador++){
+        mostra(numero + " vezes " + multiplicador + " é igual a " + multiplicador * numero);
+        //mostra(multiplicador*7);
     }
 </script>
