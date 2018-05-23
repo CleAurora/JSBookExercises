@@ -1,29 +1,44 @@
-<meta charset:"utf-8">
+<meta charset="utf-8">
 <script>
 
     function mostra(frase){
         document.write(frase+"<br>");
     }
-    
-    var anoLimite = parseInt(prompt("Qual é o ano limite?"));
-    var anoDeCopa = parseInt(prompt("Informe o ano inicial!"));
 
-    //while(true){
-    while(anoDeCopa<=anoLimite){
-        mostra (anoDeCopa + " tem copa!!!");
-        anoDeCopa = anoDeCopa + 4;
-        mostra(anoDeCopa+ "! Esse é o valor após a soma!");
+    var anoLimite = 0;
+    var anoInicial = 0;
+    var anoInicialDeCopa = 1930;
+    var somaAnoDeCopas = 0;
+    
+    while (anoLimite < anoInicialDeCopa || anoInicial < anoInicialDeCopa) {
+        var anoInicial = parseInt(prompt("Informe o ano inicial!"));
+        var anoLimite = parseInt(prompt("Qual é o ano limite?"));
+
+        if (anoLimite < anoInicialDeCopa || anoInicial < anoInicialDeCopa) {
+            alert("Não há copas antes de 1930");
+        }
+    }
+
+    somaAnoDeCopas = anoInicialDeCopa;
+    
+    while(somaAnoDeCopas <= anoLimite) {
+        if (somaAnoDeCopas >= anoInicial) {
+            mostra (somaAnoDeCopas + " tem copa!!!");
+        }
+        
+        somaAnoDeCopas = somaAnoDeCopas + 4;
+        console.log(somaAnoDeCopas);
     }
     
-    if(anoLimite>=1930 && anoDeCopa>=1930){
-        mostra("Ufa! Esses foram os anos de copa de " + anoDeCopa + " até " + anoLimite+"!");
-    } 
-    if (anoLimite>=1930 && anoDeCopa<=1930){
-        mostra("A copa só começou em 1930, digite um ano após o seu início!");
-    }
-    if(anoDeCopa<=1930 && anoLimite<=1930){
-        mostra("A copa só começou em 1930, digite um ano após o seu início!");
-    }    
+    // if(anoLimite>=1930 && anoInicial>=1930){
+        mostra("Ufa! Esses foram os anos de copa de " + anoInicial + " até " + anoLimite + "!");
+    // } 
+    // if (anoLimite>=1930 && anoInicial<=1930){
+    //     mostra("A copa só começou em 1930, digite um ano após o seu início!");
+    // }
+    // if(anoInicial<=1930 && anoLimite<=1930){
+    //     mostra("A copa só começou em 1930, digite um ano após o seu início!");
+    // }    
     //else{
     //        mostra("A copa só começou em 1930, digite um ano após o seu início!");
     //    }
