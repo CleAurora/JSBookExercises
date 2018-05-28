@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+<script>
+    function mostra(frase){
+        document.write(frase+"<br>");
+    }
+
+    var anoInicial = 1896;
+    var anoLimite = 0;
+    var anoOlimpiada = 0;
+    var somaAnosOlimpicos = 0;
+
+    while(anoLimite<anoInicial){
+        anoOlimpiada = parseInt(prompt("Qual o ano inicial para contar as olimpíadas?"));
+        anoLimite = parseInt(prompt("Qual o ano limite para saber se há Olimpíadas?"));
+
+        if (anoLimite < anoInicial) {
+            alert("Por Favor, coloque um ano limite posterior ao da primeira Olimpíada, que foi em 1896!");
+        }        
+    }
+
+    somaAnosOlimpicos = anoInicial;
+
+    while(somaAnosOlimpicos <= anoLimite){
+        
+        if (somaAnosOlimpicos >= anoOlimpiada){
+            mostra(somaAnosOlimpicos + " tem Olimpíadas!!!");
+        }
+
+        somaAnosOlimpicos = somaAnosOlimpicos+4;
+
+    }
+    mostra("Ufa, essas foram as olimpíadas de " + anoOlimpiada + " até " + anoLimite+ "!!!");
+</script>

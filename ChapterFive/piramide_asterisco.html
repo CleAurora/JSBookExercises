@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<script>
+    var tamanho = parseInt(prompt("Qual o tamanho do lado da sua pirâmide?"));
+    for (var linha = 0; linha<tamanho; linha=linha+1){
+        for(var coluna = linha + tamanho; coluna<tamanho*2; coluna = coluna+1){
+            document.write(" _ ");
+        }
+        for (var k=0; k<linha; k++){
+            document.write(" * _ ");
+        }
+        document.write("*");
+        for(var coluna = linha + tamanho; coluna<tamanho*2; coluna = coluna+1){
+            document.write(" _ ");
+        }    
+        document.write("<br>");
+    }
+</script>

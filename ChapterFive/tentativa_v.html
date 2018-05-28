@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<script>
+    var tamanho = parseInt(prompt("Qual o tamanho em pé do V de vitória?"));
+    for (linha=0; linha<=tamanho; linha=linha+1){
+        for(coluna=0; coluna<= tamanho*2; coluna=coluna+1){
+            if(linha==coluna || coluna==tamanho*2-linha){
+                document.write("*");
+            } else{
+                document.write("_");
+            }
+        }
+    document.write("<br>");
+    }
+</script>
