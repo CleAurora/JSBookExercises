@@ -5,7 +5,7 @@
         value ="Compare com o meu segredo!" />
 
 <script>
-    var segredo = 8;
+    var segredo = Math.round(Math.random()*10);
     var caixaDoNumero = document.getElementById("numero");
 
     function botaoClicado() {
@@ -15,9 +15,12 @@
         } else{
             alert("Infelizmente você errou!");
         }
+        caixaDoNumero.value = " ";
     }
  
     var botaoAdivinhar = document.getElementById("adivinhar");
     botaoAdivinhar.onclick = botaoClicado;
+
+    
     
 </script>
