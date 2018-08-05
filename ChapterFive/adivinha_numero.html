@@ -1,23 +1,26 @@
 <meta charset="utf-8">
 <script>
     
-    var numeroPensado = Math.round(Math.random()*1000);
+    var numeroPensado = Math.round(Math.random()*10);
     
     var numeroDaTentativa = 1;
-    while(numeroDaTentativa<=1000){
+    while(numeroDaTentativa<=10){
         var chute = prompt("Qual você acha que é?");
         
         if(chute == numeroPensado){
             alert("Parabéns, você acertou!!");
             break;
         } else{
-            if (numeroPensado < numeroDaTentativa){
+            if (chute > numeroPensado){
             alert("Errou. Está muito acima do número escolhido! Será que ainda tem mais tentativas?");
-            } else{
+            } else {
                 alert("Errou. Está muito abaixo do número escolhido! Será que ainda tem mais tentativas?");
-            }
+            }        
         }
+
+    
         numeroDaTentativa++;
     }
+    document.write ("Eu pensei no número "+ numeroPensado +". Jogue outra vez!!!");
 
 </script>
