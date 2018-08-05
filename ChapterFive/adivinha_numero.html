@@ -10,15 +10,12 @@
         if(chute == numeroPensado){
             alert("Parabéns, você acertou!!");
             break;
-        } else{
-            if (chute > numeroPensado){
+        } else if (chute > numeroPensado) {
             alert("Errou. Está muito acima do número escolhido! Será que ainda tem mais tentativas?");
-            } else {
-                alert("Errou. Está muito abaixo do número escolhido! Será que ainda tem mais tentativas?");
-            }        
-        }
+        } else {
+            alert("Errou. Está muito abaixo do número escolhido! Será que ainda tem mais tentativas?");
+        }        
 
-    
         numeroDaTentativa++;
     }
     document.write ("Eu pensei no número "+ numeroPensado +". Jogue outra vez!!!");
