@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+
+<input type = "text" id= "numero" />
+<input type = "submit" value = "Lance seu número e veja a sorte" id= "comparar" />
+
+<script>
+    var numeroSorteado = [Math.round(Math.random()*100), Math.round(Math.random()*100), Math.round(Math.random()*100), Math.round(Math.random()*100), Math.round(Math.random()*100), Math.round(Math.random()*100)] 
+    var numeroTentado = [];
+
+    function adicionarNumeroTentado(){
+        var numero = document.getElementById("numero").value;
+        for(var i = 0; i<numeroTentado.length; i=i+1){
+            if(numeroTentado[i]==numero){
+                alert("Você já tentou esse número!");
+                return
+            }
+        }
+    numeroTentado.push(numero);
+    console.log(sorteados);
+    }
+    var botao=document.getElementById("comparar");
+    botao.onclick = adicionarNumeroTentado;
+
+    function compararMatrizes(){
+        var numero1= numeroSorteado[i];
+        
+
+    }
+</script>
