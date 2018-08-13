@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8">        
+    </head>
+
+    <body>
+        <script>
+            var numerosSorteados = [];
+
+            while(numerosSorteados.length < 6) {
+                var numeroSorteado = Math.round(Math.random()*59)+1;
+
+                if(numerosSorteados.indexOf(numeroSorteado)<0){
+                    numerosSorteados.push(numeroSorteado);
+                }
+            }
+
+            console.log(numerosSorteados);
+
+            var numerosDigitados = [];
+
+            while(numerosDigitados.length < 6){
+                var numeroDigitado = parseInt(prompt("Digite o número para jogar: "));
+
+                if(numerosDigitados.indexOf(numeroDigitado)<0 && numeroDigitado<=60 && numeroDigitado>=1){
+                    numerosDigitados.push(numeroDigitado);
+                }
+            }
+
+            console.log(numerosDigitados);
+
+            var numerosAcertados = [];
+
+            for(var i = 0; i < numerosDigitados.length; i++){
+                var numeroAtual = numerosDigitados[i];
+                if(numerosSorteados.indexOf(numeroAtual)>=0){
+                    numerosAcertados.push(numeroAtual);
+                }
+            }
+
+            document.write("Você acertou os seguintes números: "+ numerosAcertados +"!");
+
+        </script>
+    </body>
+</html>
