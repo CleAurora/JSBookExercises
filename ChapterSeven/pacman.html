@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="utf">
+    </head>
+    <body>
+        <canvas id=pacman width="600" height="400"></canvas>
+
+        <script>
+            var pacman = document.getElementById("pacman");
+            var context = pacman.getContext("2d");
+
+            context.fillStyle = "yellow";
+            context.beginPath();
+            context.arc (300, 200, 150, 0, 2*Math.PI);
+            context.fill();
+
+            context.fillStyle = "white";
+            context.beginPath();
+            context.moveTo(300, 200);
+            context.lineTo(450, 286);
+            context.lineTo(450,114);
+            context.fill();
+
+            context.fillStyle = "black";
+            context.beginPath();
+            context.arc(360, 100, 15, 0, 2*Math.PI);
+            context.fill();
+        </script>
+    </body>
+</html>
