@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <canvas id="tela" width="600" height="400"></canvas>
+        <script>
+            var tamanho = parseInt(prompt("Qual o tamanho da base da pirâmide (25 a 600)?"));
+            //var color = prompt("Qual a cor da piramide (em inglês)?");
+
+            function desenhaCirculo(x, y){
+                var tela = document.getElementById("tela");
+                var c = tela.getContext("2d");
+                
+                c.fillStyle = "blue";
+                c.beginPath();
+                c.arc(x, y, 10, 0, 2*Math.PI);
+                c.fill();
+                }
+            
+            for(x = 0; x<=tamanho; x=x+25){
+                for(y=0; y<=x; y=y+25){
+                    desenhaCirculo(x, y);
+                }
+            }
+
+
+        </script>
+    </body>
+</html>
+
