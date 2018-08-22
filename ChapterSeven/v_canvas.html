@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <canvas id="tela" width="400" height="600"></canvas>
+        <script>
+            var tamanho = parseInt(prompt("Qual o tamanho em pé do V de vitória (de 10 a 200)?"));
+
+            function desenhaCirculo(x, y, color){
+                var tela = document.getElementById("tela");
+                var c = tela.getContext("2d");
+
+                c.fillStyle = color;
+                c.beginPath();
+                c.arc(x, y, 2, 0, 2*Math.PI);
+                c.fill();
+            }
+
+            for(y=2; y<=tamanho; y=y+10){
+                for(x=2; x<=tamanho*2; x=x+10){
+                    if(x == y || y == tamanho*2-x){
+                        desenhaCirculo(x,y, "blue");
+                    } else{
+                        desenhaCirculo(x,y,"pink");
+
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

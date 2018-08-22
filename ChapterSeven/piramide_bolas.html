@@ -14,12 +14,12 @@
                 
                 c.fillStyle = "blue";
                 c.beginPath();
-                c.arc(x, y, 10, 0, 2*Math.PI);
+                c.arc(x, y, 2, 0, 2*Math.PI);
                 c.fill();
                 }
             
-            for(x = 0; x<=tamanho; x=x+25){
-                for(y=0; y<=x; y=y+25){
+            for(y= 0; y<=tamanho; y=y+10){
+                for(x = 2; x<= y; x=x+10){
                     desenhaCirculo(x, y);
                 }
             }
