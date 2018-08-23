@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <canvas id="tela" width="600" height="400"></canvas>
+        <script>
+            var tamanho = parseInt(prompt("Qual o tamanho do lado do seu quadrado?"));
+            
+            function desenhaCirculo(x,y){
+                var tela = document.getElementById("tela");
+                var c = tela.getContext("2d");
+                
+                c.fillStyle = "red";
+                c.beginPath();
+                c.arc(x, y, 5, 0, 2*Math.PI);
+                c.fill();
+            }
+
+            for (x=5; x<tamanho; x=x+15){
+                for(y=5; y<tamanho; y=y+15){
+                    desenhaCirculo(x, y);
+                }
+            }
+
+        </script>
+    </body>
+</html>
