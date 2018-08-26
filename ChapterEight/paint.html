@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <canvas id="tela" width="600" height="400"></canvas>
+    </body>
+    <script>
+        var tela = document.getElementById("tela");
+        tela.onmousedown = onMouseDown;
+        tela.onclick = onClick;
+        tela.oncontextmenu = onContextMenu;
+        
+        var c = tela.getContext("2d");
+
+        c.fillStyle = "pink";
+        c.fillRect(0, 0, 600, 400);
+
+        function onMouseMove(evento){
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+
+            cliqueEsquerdo(x,y);
+        }
+
+        function onMouseDown(evento){
+            onMouseMove(evento);
+            tela.onmousemove = onMouseMove;
+        }
+
+        function onClick(evento) {
+            tela.onmousemove = null;
+            tela.onmouseup = null;
+        }
+
+        function onContextMenu(evento){
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+
+            cliqueDireito(x,y);
+            return false;
+        }
+
+        function cliqueDireito(x,y){
+            c.fillStyle = "purple";
+            c.fillRect(x, y, 10, 10);
+        }
+
+        function cliqueEsquerdo(x,y){
+            c.fillStyle = "yellow";
+            c.beginPath()
+            c.arc(x, y, 5, 0, 2*Math.PI);
+            c.fill();
+        }
+    </script>
+</html>
