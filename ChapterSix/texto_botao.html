@@ -12,19 +12,28 @@
     console.log(segredos.length);
     
     var caixaDoNumero = document.getElementById("numero");
+    caixaDoNumero.onkeydown = trataEnter; 
     
     function botaoClicado(){
         for(var i = 0; i < segredos.length; i = i+1) {
             if(segredos[i] == caixaDoNumero.value){
-            alert("Parabéns! Você acertou o "+ [i]+ "o dos números secretos");
-            caixaDoNumero.value = " ";
-            return;
+                alert("Parabéns! Você acertou o "+ [i+1]+ "º dos números secretos");
+                caixaDoNumero.value = " ";
+                return;
             }
         }
-            alert("Infelizmente você errou!");
-            caixaDoNumero.value = " ";
+
+        alert("Infelizmente você errou!");
+        caixaDoNumero.value = " ";
+    }
+
+    function trataEnter(event) {
+        if (event.keyCode == '13') {
+            botaoClicado()
+        }
     }
 
     var botaoAdivinhar = document.getElementById("adivinhar");
     botaoAdivinhar.onclick = botaoClicado;
+    segredos.push(68);
 </script>
