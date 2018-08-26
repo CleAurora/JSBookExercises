@@ -4,17 +4,51 @@
     </head>
     <body>
         <canvas id="tela" width="600" height="400"></canvas>
+        <br>
+        <button id="redButton" value="red">Vermelho</button> 
+        <button id="greenButton" value="green">Verde</button>
+        <button id="blueButton" value="blue">Azul</button>
+        <button id ="purpleButton" value="purple">Roxo</button>
+        <button id = "yellowButton" value="yellow">Amarelo</button>
+        <button id = "whiteButton" value="white">Branco</button>
+        <button id = "blackButton" value="black">Preto</button>
+        <button id = "grayButton" value="gray">Cinza</button>
+
+
     </body>
     <script>
         var tela = document.getElementById("tela");
         tela.onmousedown = onMouseDown;
         tela.onclick = onClick;
-        tela.oncontextmenu = onContextMenu;
+        
+        var redButton = document.getElementById("redButton");
+        var greenButton = document.getElementById("greenButton");
+        var blueButton = document.getElementById("blueButton");
+        var purpleButton = document.getElementById("purpleButton");
+        var yellowButton = document.getElementById("yellowButton");
+        var whiteButton = document.getElementById("whiteButton");
+        var blackButton = document.getElementById("blackButton");
+        var grayButton = document.getElementById("grayButton");
+        
+        redButton.onclick = colorButtonOnClick; 
+        greenButton.onclick = colorButtonOnClick;
+        blueButton.onclick = colorButtonOnClick;
+        purpleButton.onclick = colorButtonOnClick;
+        yellowButton.onclick = colorButtonOnClick;
+        whiteButton.onclick = colorButtonOnClick;
+        blackButton.onclick = colorButtonOnClick;
+        grayButton.onclick = colorButtonOnClick;
+
+        var corEscolhida = "blue";
         
         var c = tela.getContext("2d");
 
         c.fillStyle = "pink";
         c.fillRect(0, 0, 600, 400);
+        
+        function colorButtonOnClick(evento){
+            corEscolhida = evento.srcElement.value;
+        }
 
         function onMouseMove(evento){
             var x = evento.pageX - tela.offsetLeft;
@@ -33,21 +67,8 @@
             tela.onmouseup = null;
         }
 
-        function onContextMenu(evento){
-            var x = evento.pageX - tela.offsetLeft;
-            var y = evento.pageY - tela.offsetTop;
-
-            cliqueDireito(x,y);
-            return false;
-        }
-
-        function cliqueDireito(x,y){
-            c.fillStyle = "purple";
-            c.fillRect(x, y, 10, 10);
-        }
-
         function cliqueEsquerdo(x,y){
-            c.fillStyle = "yellow";
+            c.fillStyle = corEscolhida;
             c.beginPath()
             c.arc(x, y, 5, 0, 2*Math.PI);
             c.fill();
