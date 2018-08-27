@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <canvas id="tela" width="600" height="400"></canvas>
+        <script>
+            var tela = document.getElementById("tela");
+            var c = tela.getContext("2d");
+
+            c.fillStyle="green";
+            c.fillRect(0, 0, 200, 400);
+
+            function circulo(x, y, raio){
+                c.strokeStyle = "blue";
+                c.beginPath();
+                c.arc(x, y, raio, 0, 2*Math.PI);
+                c.stroke();
+            }
+
+            function limpaTela(){
+                c.clearRect(0, 0, 600, 400);
+            }
+            
+            var imagem = new Image();
+            imagem.src = "http://imagensemoldes.com.br/wp-content/uploads/2018/02/Imagem-Arca-de-Noé-Barco-para-Personalizados-1024x969.png";
+
+            function desenhaImagem(x, y){
+                c.drawImage(imagem, x, y);
+            }
+
+            var x=1;
+
+            function desenha(){
+                limpaTela();
+                circulo(x, Math.sin(x/20)*100+200 , 10);
+                x=x+1;
+            }
+            setInterval(desenha, 30);
+        </script>
+    </body>
+</html>
