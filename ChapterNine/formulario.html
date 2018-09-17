@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <input type="text" id="nome" placeholder="Seu nome" /> 
+        <br />   
+        <input type="text" id="idade" placeholder="Sua idade" />
+        <br />       
+        <input type="text" id="peso" placeholder="Seu peso" />
+        <br />
+        <input type="text" id="altura" placeholder="Sua altura" />
+        <br />
+        <input type="button" id="gerarRelatorio" value="Gerar Relatório" />
+        <script>
+            var nomeText = document.getElementById("nome");
+            var idadeText = document.getElementById("idade");
+            var pesoText = document.getElementById("peso");
+            var alturaText = document.getElementById("altura");
+
+            var gerarRelatorioButton = document.getElementById("gerarRelatorio");
+            gerarRelatorioButton.onclick = botaoClicado;
+
+            function botaoClicado(evento){
+                var nome = nomeText.value;
+                var idade = parseInt(idadeText.value);
+                var peso = parseFloat(pesoText.value);
+                var altura = parseFloat(alturaText.value);
+                
+                console.log(nome, idade, peso, altura);
+            }
+
+
+        </script>
+    </body>
+</html>
